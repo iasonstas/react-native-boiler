@@ -1,18 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
+
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
   useColorScheme,
   View,
+  Text,
+  Button,
 } from 'react-native';
-export default function HomeScreen() {
+// import {ScrollView, StyleSheet, Alert, Image} from 'react-native';
+
+function HomeScreen({navigation}) {
+  const onPressIng = () => {
+    navigation.navigate('Details');
+  };
+
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <a href="details.html">Go to Details</a>
+    <View
+      // eslint-disable-next-line react-native/no-inline-styles
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'black',
+      }}>
+      <Button title="Go to Details" onPress={onPressIng} />
     </View>
   );
 }
+
+export default HomeScreen;
